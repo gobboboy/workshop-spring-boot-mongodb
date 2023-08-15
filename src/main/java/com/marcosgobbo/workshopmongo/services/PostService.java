@@ -1,7 +1,6 @@
 package com.marcosgobbo.workshopmongo.services;
 
 import com.marcosgobbo.workshopmongo.domain.Post;
-import com.marcosgobbo.workshopmongo.domain.User;
 import com.marcosgobbo.workshopmongo.repository.PostRepository;
 import com.marcosgobbo.workshopmongo.services.exception.ObjectNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +25,6 @@ public class PostService {
     }
 
     public List<Post> findByTitle(String text) {
-        return repo.findByTitleContainingIgnoreCase(text);
+        return repo.searchTitle(text);
     }
 }
